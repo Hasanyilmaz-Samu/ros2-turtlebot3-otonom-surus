@@ -1,0 +1,10 @@
+free_thresh: 0.25
+image: senaryo3_ev_harita.pgm
+mode: trinary
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -3.9549379081769827
+- -3.9584454536010303
+- 0.0
+resolution: 0.05000000074505806

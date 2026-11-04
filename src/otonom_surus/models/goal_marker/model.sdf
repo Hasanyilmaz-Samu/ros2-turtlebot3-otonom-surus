@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+  Hedef isareti. Bilerek <collision> icermez:
+  Gazebo Classic'te ray (LiDAR) sensoru yalnizca collision geometrisini gorur,
+  bu sayede robot hedefi engel olarak algilamaz ve uzerine surulebilir.
+-->
+<sdf version="1.6">
+  <model name="goal_marker">
+    <static>true</static>
+    <link name="link">
+      <visual name="disk">
+        <pose>0 0 0.005 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.3</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+        <transparency>0.3</transparency>
+        <material>
+          <ambient>0.1 0.8 0.1 1</ambient>
+          <diffuse>0.1 0.8 0.1 1</diffuse>
+          <emissive>0.0 0.3 0.0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

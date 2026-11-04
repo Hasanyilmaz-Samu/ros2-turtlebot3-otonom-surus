@@ -1,0 +1,10 @@
+free_thresh: 0.25
+image: senaryo2_yogun_harita.pgm
+mode: trinary
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -3.9821076981187806
+- -3.9550222436456037
+- 0.0
+resolution: 0.05000000074505806

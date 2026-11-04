@@ -1,0 +1,25 @@
+4'lü terminal açtıktan sonra
+
+Sol Üst (ROS 2 Publisher - Manuel Klavye):
+ros2 run otonom_surus teleop
+
+
+Sağ Üst (ROS 2 Subscriber):
+ros2 run otonom_surus subscriber
+
+
+Sol Alt (gazebo):
+ros2 launch otonom_surus turtlebot3_control.launch.py senaryo:=1
+
+
+Sağ Alt (Ros2 Komutları - Otonom Sürüş veya Keşif):
+# Hedefe otonom sürüş için:
+ros2 run otonom_surus navigator --ros-args -p senaryo:=1
+
+# Veya tüm haritayı otonom keşfetmek için:
+ros2 run otonom_surus kesif --ros-args -p senaryo:=1
+
+
+# Senaryo 1: Kolay Parkur
+# Senaryo 2: Yoğun Engelli / Slalom Parkuru
+# Senaryo 3: 5 Odalı Gerçekçi Ev Planı

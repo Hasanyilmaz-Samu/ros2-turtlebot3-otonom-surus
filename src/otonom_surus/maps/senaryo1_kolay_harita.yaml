@@ -1,0 +1,10 @@
+free_thresh: 0.25
+image: senaryo1_kolay_harita.pgm
+mode: trinary
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -3.9711639654102795
+- -3.9500375507695002
+- 0.0
+resolution: 0.05000000074505806

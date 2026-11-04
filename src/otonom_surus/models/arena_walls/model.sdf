@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+  8 m x 8 m arena, merkez (0, 0).
+  Duvar merkezleri x/y = +-4.0, kalinlik 0.15 m -> ic yuzeyler +-3.925 m.
+  Yukseklik 0.5 m (Waffle LiDAR'i ~0.2 m yukseklikte tarar).
+-->
+<sdf version="1.6">
+  <model name="arena_walls">
+    <static>true</static>
+    <link name="link">
+
+      <!-- Kuzey duvari (y = +4) -->
+      <collision name="kuzey_collision">
+        <pose>0 4.0 0.25 0 0 0</pose>
+        <geometry><box><size>8.15 0.15 0.5</size></box></geometry>
+      </collision>
+      <visual name="kuzey_visual">
+        <pose>0 4.0 0.25 0 0 0</pose>
+        <geometry><box><size>8.15 0.15 0.5</size></box></geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Guney duvari (y = -4) -->
+      <collision name="guney_collision">
+        <pose>0 -4.0 0.25 0 0 0</pose>
+        <geometry><box><size>8.15 0.15 0.5</size></box></geometry>
+      </collision>
+      <visual name="guney_visual">
+        <pose>0 -4.0 0.25 0 0 0</pose>
+        <geometry><box><size>8.15 0.15 0.5</size></box></geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Dogu duvari (x = +4) -->
+      <collision name="dogu_collision">
+        <pose>4.0 0 0.25 0 0 0</pose>
+        <geometry><box><size>0.15 8.15 0.5</size></box></geometry>
+      </collision>
+      <visual name="dogu_visual">
+        <pose>4.0 0 0.25 0 0 0</pose>
+        <geometry><box><size>0.15 8.15 0.5</size></box></geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Bati duvari (x = -4) -->
+      <collision name="bati_collision">
+        <pose>-4.0 0 0.25 0 0 0</pose>
+        <geometry><box><size>0.15 8.15 0.5</size></box></geometry>
+      </collision>
+      <visual name="bati_visual">
+        <pose>-4.0 0 0.25 0 0 0</pose>
+        <geometry><box><size>0.15 8.15 0.5</size></box></geometry>
+        <material>
+          <ambient>0.6 0.6 0.6 1</ambient>
+          <diffuse>0.6 0.6 0.6 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

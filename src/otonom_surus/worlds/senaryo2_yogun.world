@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<!--
+  SENARYO 2 - YOGUN ENGELLI ALAN (8x8)
+  Baslangic: (-3.0, -3.0), yaw = 0  |  Hedef: (3.0, 2.5)
+  - 12 sutun (r = 0.25 m) ve 6 dondurulmus kutu (0.5 x 0.5 m)
+  - Sasirtmali (zigzag) izgara duzeni, engeller arasi bosluk >= 0.75 m.
+  Baslangic/hedef konumlari config/scenarios.yaml dosyasinda tanimlidir.
+-->
+<sdf version="1.6">
+  <world name="senaryo2_yogun">
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>0 -7 9.5 0 0.93 1.5708</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
+    <include><uri>model://ground_plane</uri></include>
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://arena_walls</uri></include>
+
+    <!-- ===================== SUTUN / KUTU IZGARASI ===================== -->
+    <model name="sutun_1">
+      <static>true</static>
+      <pose>-2.25 -2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_2">
+      <static>true</static>
+      <pose>-0.75 -2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_3">
+      <static>true</static>
+      <pose>0.75 -2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_4">
+      <static>true</static>
+      <pose>2.25 -2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="kutu_1">
+      <static>true</static>
+      <pose>-1.5 -1.125 0.25 0 0 0.7854</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.8 0.1 1</ambient><diffuse>0.9 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="kutu_2">
+      <static>true</static>
+      <pose>0.0 -1.125 0.25 0 0 0.7854</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.8 0.1 1</ambient><diffuse>0.9 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="kutu_3">
+      <static>true</static>
+      <pose>1.5 -1.125 0.25 0 0 0.7854</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.8 0.1 1</ambient><diffuse>0.9 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="sutun_5">
+      <static>true</static>
+      <pose>-2.25 0.0 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_6">
+      <static>true</static>
+      <pose>-0.75 0.0 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_7">
+      <static>true</static>
+      <pose>0.75 0.0 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_8">
+      <static>true</static>
+      <pose>2.25 0.0 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="kutu_4">
+      <static>true</static>
+      <pose>-1.5 1.125 0.25 0 0 0.7854</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.8 0.1 1</ambient><diffuse>0.9 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="kutu_5">
+      <static>true</static>
+      <pose>0.0 1.125 0.25 0 0 0.7854</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.8 0.1 1</ambient><diffuse>0.9 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="kutu_6">
+      <static>true</static>
+      <pose>1.5 1.125 0.25 0 0 0.7854</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.8 0.1 1</ambient><diffuse>0.9 0.8 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="sutun_9">
+      <static>true</static>
+      <pose>-2.25 2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_10">
+      <static>true</static>
+      <pose>-0.75 2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_11">
+      <static>true</static>
+      <pose>0.75 2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="sutun_12">
+      <static>true</static>
+      <pose>2.25 2.25 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="visual"><geometry><cylinder><radius>0.25</radius><length>0.5</length></cylinder></geometry>
+          <material><ambient>0.1 0.6 0.6 1</ambient><diffuse>0.1 0.6 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

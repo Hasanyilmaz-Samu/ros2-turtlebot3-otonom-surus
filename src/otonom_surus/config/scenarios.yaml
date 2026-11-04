@@ -1,0 +1,25 @@
+# Test senaryolari (8x8 Arena)
+# Tum koordinatlar Gazebo dunya cercevesindedir (metre, radyan).
+#
+# Global maliyet haritasi (global_costmap) sabit 10x10 metre olarak ayarlanmistir.
+# Bu sayede robot ara hedefe gerek kalmadan, tek bir final hedefi ile
+# baslangictan hedefe engellerden kacinarak otonom olarak ulasir.
+
+senaryolar:
+  "1":
+    ad: kolay
+    dunya: senaryo1_kolay.world
+    baslangic: {x: -3.0, y: -3.0, yaw: 0.7854}
+    hedef: {x: 3.0, y: 3.0}
+
+  "2":
+    ad: yogun
+    dunya: senaryo2_yogun.world
+    baslangic: {x: -3.0, y: -3.0, yaw: 0.0}
+    hedef: {x: 3.0, y: 2.5}
+
+  "3":
+    ad: ev
+    dunya: senaryo3_ev.world
+    baslangic: {x: -3.0, y: -3.0, yaw: 1.5708}
+    hedef: {x: 2.0, y: 2.5}
